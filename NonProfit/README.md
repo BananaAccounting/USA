@@ -14,6 +14,12 @@ Links to interesting information and resource
 * Form 990
   * [IRS Current Form 990 Series - Forms and Instructions] (http://www.irs.gov/uac/Current-Form-990-Series-Forms-and-Instructions)
   * [Form 990 online] (https://efile.form990.org/default.asp)
+
+* Financial Accounting Standard Board (FASB)
+  * [FASB Not-for-Profits main page] (http://www.fasb.org/jsp/FASB/Page/BridgePage&cid=1351027226246)
+  * [FASB Proposed standard update] (http://www.fasb.org/cs/ContentServer?c=Document_C&pagename=FASB%2FDocument_C%2FDocumentPage&cid=1176165948999)
+  * [PWC - FASB exposure draft proposes dramatic changes for not-for-profit entities] (http://www.pwc.com/us/en/cfodirect/publications/in-brief/fasb-exposure-draft-proposes-change-not-for-profit-entities.html)
+  
 * General info
   * [Basics of Nonprofit Accounting] (http://de.slideshare.net/TAGmanagement/basics-of-nonprofit-accounting?next_slideshow=1)
   * [Nonprofit Accounting and Form 990 Overview] (http://de.slideshare.net/JacobMillingtonCPA/nonprofit-accounting-and-form-990-overview)
