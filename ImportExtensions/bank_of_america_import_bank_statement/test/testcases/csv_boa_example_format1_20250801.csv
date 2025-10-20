@@ -1,0 +1,12 @@
+Description,,Summary Amt.
+Beginning balance as of 01/15/2025,,"100.00"
+Total credits,,"2,000.00"
+Total debits,,"-1,336.39"
+Ending balance as of 8/16/2025,,"763.61"
+
+Date,Description,Amount,Running Bal.
+08/01/2025,Beginning balance,,"100.00"
+08/12/2025,"Test","-23.02","76.98"
+08/13/2025,"Test","2,000.00","2,076.98"
+08/18/2025,"Test","-66.38","2,010.60"
+08/18/2025,"Test","-6.52","2,004.08"

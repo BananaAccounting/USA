@@ -132,7 +132,7 @@ function exec(string, isTest) {
     this.mapTransaction = function (transaction) {
       let mappedLine = [];
    
-      mappedLine.push(Banana.Converter.toInternalDateFormat(transaction["Date"], "dd.mm.yyyy"));
+      mappedLine.push(Banana.Converter.toInternalDateFormat(transaction["Date"], "mm.dd.yyyy"));
       mappedLine.push(Banana.Converter.toInternalDateFormat("", "dd.mm.yyyy"));
       mappedLine.push("");
       mappedLine.push("");
