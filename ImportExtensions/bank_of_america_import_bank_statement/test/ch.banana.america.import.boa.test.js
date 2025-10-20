@@ -24,8 +24,8 @@
 // @docproperties = 
 // @outputformat = none
 // @inputdataform = none
-// @includejs = ../ch.banana.america.import.boa/import.utilities.js
-// @includejs = ../ch.banana.america.import.boa/ch.banana.america.import.boa.js
+// @includejs = ../ch.banana.america.import.boa.sbaa/import.utilities.js
+// @includejs = ../ch.banana.america.import.boa.sbaa/ch.banana.america.import.boa.js
 // @timeout = -1
 
 // Register test case to be executed
