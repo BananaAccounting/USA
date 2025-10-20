@@ -26,7 +26,7 @@
 // @task = import.transactions
 // @outputformat = transactions.simple
 // @inputdatasource = openfiledialog
-// @inputencoding = latin1
+// @inputencoding = utf-8
 // @inputfilefilter = Text files (*.txt *.csv);;All files (*.*)
 // @inputfilefilter.de = Text (*.txt *.csv);;Alle Dateien (*.*)
 // @inputfilefilter.fr = Texte (*.txt *.csv);;Tous (*.*)
