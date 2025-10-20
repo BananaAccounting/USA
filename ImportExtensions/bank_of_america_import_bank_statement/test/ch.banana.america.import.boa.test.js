@@ -16,7 +16,7 @@
 
 // @id = ch.banana.america.import.boa.test
 // @api = 1.0
-// @pubdate = 2023-02-07
+// @pubdate = 2025-10-20
 // @publisher = Banana.ch SA
 // @description = <TEST ch.banana.america.import.boa.test>
 // @task = app.command
