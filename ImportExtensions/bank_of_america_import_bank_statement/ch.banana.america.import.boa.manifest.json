@@ -1,0 +1,19 @@
+{
+    "category": "import",
+    "country": "america",
+    "countryCode": "us",
+    "description": "Bank of America - Import movements .csv (Banana+ Advanced)",
+    "description.en": "Bank of America - Import movements .csv (Banana+ Advanced)",
+    "description.it": "Bank of America - Importa movimenti .csv (Banana+ Advanced)",
+    "description.de": "Bank of America - Bewegungen importieren .csv (Banana+ Advanced)",
+    "description.fr": "Bank of America - Importer mouvements .csv (Banana+ Advanced)",
+    "id": "ch.banana.america.import.boa",
+    "language": "en",
+    "publisher": "Banana.ch",
+    "title": "Bank of America - Import movements .csv (Banana+ Advanced)",
+    "title.en": "Bank of America - Import movements .csv (Banana+ Advanced)",
+    "title.it": "Bank of America - Importa movimenti .csv (Banana+ Advanced)",
+    "title.de": "Bank of America - Bewegungen importieren .csv (Banana+ Advanced)",
+    "title.fr": "Bank of America - Importer mouvements .csv (Banana+ Advanced)",
+    "version": "1.0"
+}
