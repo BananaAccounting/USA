@@ -1,0 +1,22 @@
+Test Banana Apps
+----------------
+
+Date:        2025-10-20 12:44:53.654
+Duration:    00:00:00.058
+Application: BananaPlus 10.2.1.25281
+OS:          Windows-11
+Qt:          6.8.4
+
+Test summary
+------------
+
+Test succesfully completed
+
+> Fatal errors:  0
+> Differences:   0
+> Added:         0
+> Deleted:       0
+> Identical:     57
+> Total results: 57
+> Total files:   2
+
