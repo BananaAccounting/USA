@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+		<file alias="manifest.json">ch.banana.america.import.citibank.manifest.json</file>
+		<file alias="import.utilities.js">../import.utilities.js</file>
+		<file>ch.banana.america.import.citibank.js</file>
+    </qresource>
+</RCC>

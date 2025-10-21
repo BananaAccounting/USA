@@ -1,0 +1,19 @@
+{
+    "category": "import",
+    "country": "america",
+    "countryCode": "us",
+    "description": "Citibank - Import account statement .csv (Banana+ Advanced)",
+    "description.en": "Citibank - Import account statement .csv (Banana+ Advanced)",
+    "description.it": "Citibank - Importa estratto conto .csv (Banana+ Advanced)",
+    "description.de": "Citibank - Kontoauszug importieren .csv (Banana+ Advanced)",
+    "description.fr": "Citibank - Importer relevé de compte .csv (Banana+ Advanced)",
+    "id": "ch.banana.america.import.citibank",
+    "language": "en",
+    "publisher": "Banana.ch",
+    "title": "Citibank - Import account statement .csv (Banana+ Advanced)",
+    "title.en": "Citibank - Import account statement .csv (Banana+ Advanced)",
+    "title.it": "Citibank - Importa estratto conto .csv (Banana+ Advanced)",
+    "title.de": "Citibank - Kontoauszug importieren .csv (Banana+ Advanced)",
+    "title.fr": "Citibank - Importer relevé de compte .csv (Banana+ Advanced)",
+    "version": "1.0"
+}
