@@ -20,10 +20,10 @@
 %Begin test data
 \begin{tablevalue}{}{ l  l  l  l  l  l  l }
 Date & DateValue & Doc & ExternalReference & Description & Income & Expenses\\
-2025-08-18 &  &  &  & Test &  & 6.52\\
-2025-08-18 &  &  &  & Test &  & 66.38\\
-2025-08-13 &  &  &  & Test & 2000.00 & \\
 2025-08-12 &  &  &  & Test &  & 23.02\\
+2025-08-13 &  &  &  & Test & 2000.00 & \\
+2025-08-18 &  &  &  & Test &  & 66.38\\
+2025-08-18 &  &  &  & Test &  & 6.52\\
 \\
 \end{tablevalue}
 \end{document}

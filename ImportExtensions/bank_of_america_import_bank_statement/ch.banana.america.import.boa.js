@@ -112,9 +112,6 @@ function BankOfAmericaFormat1() {
          }
       }
 
-      // Sort rows by date
-      transactionsToImport = transactionsToImport.reverse();
-
       // Add header and return
       var header = [["Date", "DateValue", "Doc", "ExternalReference", "Description", "Income", "Expenses"]];
       return header.concat(transactionsToImport);
