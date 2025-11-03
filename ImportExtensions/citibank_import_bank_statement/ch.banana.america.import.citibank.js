@@ -48,9 +48,17 @@ function exec(string, isTest) {
 
    var transactions = Banana.Converter.csvToArray(string, convertionParam.separator, '"');
 
-   // Citibank Format, this format works with the header names.
+   // Citibank Format 2, this format works for business accounts.
+   var citibankFormat2 = new CitibankFormat2();
+   let transactionsData = citibankFormat2.getFormattedData(transactions, importUtilities);
+   if (citibankFormat2.match(transactionsData)) {
+      transactions = citibankFormat2.convert(transactionsData);
+      return Banana.Converter.arrayToTsv(transactions);
+   }
+
+   // Citibank Format, this format works for individual accounts.
    var citibankFormat1 = new CitibankFormat1();
-   let transactionsData = citibankFormat1.getFormattedData(transactions, importUtilities);
+   transactionsData = citibankFormat1.getFormattedData(transactions, importUtilities);
    if (citibankFormat1.match(transactionsData)) {
       transactions = citibankFormat1.convert(transactionsData);
       return Banana.Converter.arrayToTsv(transactions);
@@ -131,7 +139,7 @@ function CitibankFormat2() {
       mappedLine.push(Banana.Converter.toInternalDateFormat("", "dd.mm.yyyy"));
       mappedLine.push("");
       mappedLine.push("");
-      mappedLine.push(transaction["DESCRIPTION"]);
+      mappedLine.push(transaction["TRANSACTION TYPE"] + "; " + transaction["DESCRIPTION"]);
       let amount = Banana.Converter.toInternalNumberFormat(transaction["AMOUNT (USD)"], '.');
       if (amount.substring(0, 1) === "-") {
          mappedLine.push("");
