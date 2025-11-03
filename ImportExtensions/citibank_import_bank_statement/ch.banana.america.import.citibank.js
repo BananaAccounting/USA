@@ -135,7 +135,7 @@ function CitibankFormat2() {
    this.mapTransaction = function (transaction) {
       let mappedLine = [];
 
-      mappedLine.push(Banana.Converter.toInternalDateFormat(transaction["DATE"], "yyyy-dd-mm"));
+      mappedLine.push(Banana.Converter.toInternalDateFormat(transaction["DATE"], "yyyy-mm-dd"));
       mappedLine.push(Banana.Converter.toInternalDateFormat("", "dd.mm.yyyy"));
       mappedLine.push("");
       mappedLine.push("");
