@@ -63,8 +63,91 @@ function exec(string, isTest) {
 }
 
 /**
+ * Citibank Format 2
+ * This format concerns business account statements exported from Citibank online banking in CSV format.
+ * 
+ * DATE,TRANSACTION TYPE,DESCRIPTION,AMOUNT (USD),BALANCE (USD)
+ * 2025-10-28,Debit,TEST,-59.09,,
+ * 2025-10-28,Debit,TEST,-53.95,,
+ * 2025-10-28,Debit,TEST,-33.00,,
+ * 2025-10-28,Debit,TEST,-25.63,,
+ * 2025-10-24,ACH,TEST,-11088.26,,
+ * 2025-10-24,ACH,TEST,-72.97,,
+ */
+function CitibankFormat2() {
+   /** Return true if the transactions match this format */
+   this.match = function (transactionsData) {
+      if (transactionsData.length === 0)
+         return false;
+
+      for (var i = 0; i < transactionsData.length; i++) {
+         var transaction = transactionsData[i];
+         var formatMatched = true;
+
+         if (formatMatched && transaction["DATE"] && transaction["DATE"].length >= 10 &&
+            transaction["DATE"].match(/^\d{2,4}-\d{2}-\d{2,4}$/))
+            formatMatched = true;
+         else
+            formatMatched = false;
+
+         if (formatMatched)
+            return true;
+      }
+
+      return false;
+   }
+
+   this.convert = function (transactionsData) {
+      var transactionsToImport = [];
+
+      for (var i = 0; i < transactionsData.length; i++) {
+         if (transactionsData[i]["DATE"] && transactionsData[i]["DATE"].length >= 10 &&
+            transactionsData[i]["DATE"].match(/^\d{2,4}-\d{2}-\d{2,4}$/)) {
+            transactionsToImport.push(this.mapTransaction(transactionsData[i]));
+         }
+      }
+
+      // Sort rows by date
+      transactionsToImport = transactionsToImport.reverse();
+
+      // Add header and return
+      var header = [["Date", "DateValue", "Doc", "ExternalReference", "Description", "Income", "Expenses"]];
+      return header.concat(transactionsToImport);
+   }
+
+   this.getFormattedData = function (inData, importUtilities) {
+      var columns = importUtilities.getHeaderData(inData, 0); //array
+      var rows = importUtilities.getRowData(inData, 1); //array of array
+      let form = [];
+
+      importUtilities.loadForm(form, columns, rows);
+      return form;
+   }
+
+   this.mapTransaction = function (transaction) {
+      let mappedLine = [];
+
+      mappedLine.push(Banana.Converter.toInternalDateFormat(transaction["DATE"], "yyyy-dd-mm"));
+      mappedLine.push(Banana.Converter.toInternalDateFormat("", "dd.mm.yyyy"));
+      mappedLine.push("");
+      mappedLine.push("");
+      mappedLine.push(transaction["DESCRIPTION"]);
+      let amount = Banana.Converter.toInternalNumberFormat(transaction["AMOUNT (USD)"], '.');
+      if (amount.substring(0, 1) === "-") {
+         mappedLine.push("");
+         mappedLine.push(Banana.Converter.toInternalNumberFormat(amount.substring(1), '.'));
+      } else {
+         mappedLine.push(Banana.Converter.toInternalNumberFormat(amount, '.'));
+         mappedLine.push("");
+      }
+
+      return mappedLine;
+   }
+}
+
+/**
  * Citibank Format 1
- *
+ * This format concerns individual account statements exported from Citibank online banking in CSV format.
  * 
  * Status,Date,Description,Debit,Credit
  * Cleared,10-16-2025,"Test",4530.00,,
