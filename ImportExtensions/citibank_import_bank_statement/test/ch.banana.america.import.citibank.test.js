@@ -60,6 +60,7 @@ TestImportCitibank.prototype.testImport = function() {
    var fileNameList = [];
 
    fileNameList.push("file:script/../test/testcases/csv_citibank_example_format1_20250801.csv");
+   fileNameList.push("file:script/../test/testcases/csv_citibank_example_format2_20251029.csv");
 
    var parentLogger = this.testLogger;
    this.progressBar.start(fileNameList.length);
