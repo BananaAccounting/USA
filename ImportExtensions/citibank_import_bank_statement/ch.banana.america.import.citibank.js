@@ -14,7 +14,7 @@
 
 // @id = ch.banana.america.import.citibank
 // @api = 1.0
-// @pubdate = 2025-10-20
+// @pubdate = 2025-11-04
 // @publisher = Banana.ch SA
 // @description = Citibank - Import account statment .csv (Banana+ Advanced)
 // @description.it = Citibank - Importa movimenti .csv (Banana+ Advanced)
@@ -90,10 +90,15 @@ function CitibankFormat2() {
 
       for (var i = 0; i < transactionsData.length; i++) {
          var transaction = transactionsData[i];
-         var formatMatched = true;
+         var formatMatched = false;
 
-         if (formatMatched && transaction["DATE"] && transaction["DATE"].length >= 10 &&
+         if (transaction["DATE"] && transaction["DATE"].length >= 10 &&
             transaction["DATE"].match(/^\d{2,4}-\d{2}-\d{2,4}$/))
+            formatMatched = true;
+         else
+            formatMatched = false;
+
+         if (formatMatched && transaction["TRANSACTION TYPE"] !== undefined)
             formatMatched = true;
          else
             formatMatched = false;
@@ -124,8 +129,10 @@ function CitibankFormat2() {
    }
 
    this.getFormattedData = function (inData, importUtilities) {
-      var columns = importUtilities.getHeaderData(inData, 0); //array
-      var rows = importUtilities.getRowData(inData, 1); //array of array
+      // Create a deep copy of inData to avoid modifying the original data
+      let inDataCopy = JSON.parse(JSON.stringify(inData));
+      var columns = importUtilities.getHeaderData(inDataCopy, 0); //array
+      var rows = importUtilities.getRowData(inDataCopy, 1); //array of array
       let form = [];
 
       importUtilities.loadForm(form, columns, rows);
@@ -139,7 +146,7 @@ function CitibankFormat2() {
       mappedLine.push(Banana.Converter.toInternalDateFormat("", "dd.mm.yyyy"));
       mappedLine.push("");
       mappedLine.push("");
-      mappedLine.push(transaction["TRANSACTION TYPE"] + "; " + transaction["DESCRIPTION"]);
+      mappedLine.push(this.getDescription(transaction));
       let amount = Banana.Converter.toInternalNumberFormat(transaction["AMOUNT (USD)"], '.');
       if (amount.substring(0, 1) === "-") {
          mappedLine.push("");
@@ -150,6 +157,14 @@ function CitibankFormat2() {
       }
 
       return mappedLine;
+   }
+
+   this.getDescription = function (transaction) {
+      if (!transaction) return "";
+      const { "TRANSACTION TYPE": type, "DESCRIPTION": description } = transaction;
+      return [type, description]
+         .filter(value => value && typeof value === "string" && value.trim() !== "")
+         .join(", ");
    }
 }
 
@@ -173,10 +188,15 @@ function CitibankFormat1() {
 
       for (var i = 0; i < transactionsData.length; i++) {
          var transaction = transactionsData[i];
-         var formatMatched = true;
+         var formatMatched = false;
 
-         if (formatMatched && transaction["Date"] && transaction["Date"].length >= 10 &&
+         if (transaction["Date"] && transaction["Date"].length >= 10 &&
             transaction["Date"].match(/^\d{2}-\d{2}-\d{4}$/))
+            formatMatched = true;
+         else
+            formatMatched = false;
+
+         if (formatMatched && transaction["Status"] !== undefined)
             formatMatched = true;
          else
             formatMatched = false;
@@ -207,8 +227,10 @@ function CitibankFormat1() {
    }
 
    this.getFormattedData = function (inData, importUtilities) {
-      var columns = importUtilities.getHeaderData(inData, 0); //array
-      var rows = importUtilities.getRowData(inData, 1); //array of array
+      // Create a deep copy of inData to avoid modifying the original data
+      let inDataCopy = JSON.parse(JSON.stringify(inData));
+      var columns = importUtilities.getHeaderData(inDataCopy, 0); //array
+      var rows = importUtilities.getRowData(inDataCopy, 1); //array of array
       let form = [];
 
       importUtilities.loadForm(form, columns, rows);

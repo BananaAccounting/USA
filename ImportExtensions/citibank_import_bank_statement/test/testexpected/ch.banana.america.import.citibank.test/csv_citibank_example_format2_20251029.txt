@@ -20,18 +20,18 @@
 %Begin test data
 \begin{tablevalue}{}{ l  l  l  l  l  l  l }
 Date & DateValue & Doc & ExternalReference & Description & Income & Expenses\\
-2025-10-15 &  &  &  & Debit; CHECK &  & 0.67\\
-2025-10-15 &  &  &  & ACH; TEST &  & 1908.00\\
-2025-10-17 &  &  &  & Paid Checks; Check \#923 &  & 1000.00\\
-2025-10-17 &  &  &  & Paid Checks; Check \#431 &  & 25000.00\\
-2025-10-23 &  &  &  & Debit; CHECK &  & 41.99\\
-2025-10-24 &  &  &  & Debit; TEST &  & 23.37\\
-2025-10-24 &  &  &  & ACH; TEST &  & 72.97\\
-2025-10-24 &  &  &  & ACH; TEST &  & 11088.26\\
-2025-10-28 &  &  &  & Debit; TEST &  & 25.63\\
-2025-10-28 &  &  &  & Debit; TEST &  & 33.00\\
-2025-10-28 &  &  &  & Debit; TEST &  & 53.95\\
-2025-10-28 &  &  &  & Debit; TEST &  & 59.09\\
+2025-10-15 &  &  &  & Debit, CHECK &  & 0.67\\
+2025-10-15 &  &  &  & ACH, TEST &  & 1908.00\\
+2025-10-17 &  &  &  & Paid Checks, Check \#923 &  & 1000.00\\
+2025-10-17 &  &  &  & Paid Checks, Check \#431 &  & 25000.00\\
+2025-10-23 &  &  &  & Debit, CHECK &  & 41.99\\
+2025-10-24 &  &  &  & Debit, TEST &  & 23.37\\
+2025-10-24 &  &  &  & ACH, TEST &  & 72.97\\
+2025-10-24 &  &  &  & ACH, TEST &  & 11088.26\\
+2025-10-28 &  &  &  & Debit, TEST &  & 25.63\\
+2025-10-28 &  &  &  & Debit, TEST &  & 33.00\\
+2025-10-28 &  &  &  & Debit, TEST &  & 53.95\\
+2025-10-28 &  &  &  & Debit, TEST &  & 59.09\\
 \\
 \end{tablevalue}
 \end{document}
